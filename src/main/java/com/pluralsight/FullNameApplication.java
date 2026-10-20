@@ -25,7 +25,7 @@ public class FullNameApplication {
         System.out.println("Enter suffix (if applicable): ");
         String suffix = scanner.nextLine();
 
-        List<>
+        List<>/
 
         return firstName + lastName;
     }
