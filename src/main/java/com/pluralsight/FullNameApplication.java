@@ -1,23 +1,19 @@
 package com.pluralsight;
 
-import java.util.List;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FullNameApplication {
 
     public static void main(String[] args) {
-        System.out.println(gatherUserInfo());
-        //formatFullName();
-    }
 
-    public static String gatherUserInfo() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Hello! Please enter your first name: ");
         String firstName = scanner.nextLine();
 
-        System.out.println("Enter your middle name, or middle initial: ");
-        String middleName = scanner.nextLine();
+        System.out.println("Enter your middle initial: ");
+        String middleInitial = scanner.nextLine();
 
         System.out.println("Enter your last name: ");
         String lastName = scanner.nextLine();
@@ -25,8 +21,18 @@ public class FullNameApplication {
         System.out.println("Enter suffix (if applicable): ");
         String suffix = scanner.nextLine();
 
-        List<>/
+        String fullName = firstName;
 
-        return firstName + lastName;
+        if (!middleInitial.isEmpty()) {
+            fullName = String.format("%s %s.", fullName, middleInitial);
+        }
+
+        fullName = String.format("%s %s", fullName, lastName);
+
+        if (!suffix.isEmpty()) {
+            fullName = String.format("%s, %s", fullName, suffix);
+        }
+
+        System.out.println("Hello, " + fullName);
     }
 }
